@@ -6,16 +6,17 @@ from std_msgs import Empty
 
 def takeoff():
     pub = rospy.Publisher('bebop/takeoff', Empty, queue_size = 1)
-    pub.publish()
+    pub.publish("--once")
     return
 
 def land():
     pub = rospy.Publisher('bebop/land', Empty, queue_size = 1)
-    pub.publish()
+    pub.publish("--once")
     return
 
 if __name__ == "__main__":
     rospy.init_node('')
+    print("Taking off")
     takeoff()
     # pub = rospy.Publisher('cmd_vel', Twist, queue_size = 1)
 
@@ -24,4 +25,7 @@ if __name__ == "__main__":
     # twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
     # twist.angular.x = 0; twist.angular.y = 0, twist.angular.z = 0
     # pub.publish(twist)
+    print("Waiting")
+    rospy.sleep(5.)
+    print("Landing")
     land()
