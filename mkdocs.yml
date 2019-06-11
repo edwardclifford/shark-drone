@@ -1,0 +1,12 @@
+site_name: SHARK Drone
+
+nav:
+  - About: about.md
+  - Set Up: setup.md
+  - Flying: flying.md
+  - Testing and Debugging:
+    - Sphinx: sphinx.md
+    - Gazebo: gazebo.md
+
+
+theme: readthedocs
